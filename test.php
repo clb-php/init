@@ -358,7 +358,21 @@
       </appbar>
 
       <main>
-         <?php echo "oi"; ?>
+         <?php 
+            echo "oi"; 
+            $php = json_encode( array( 'red'=>'apple', 'yellow'=>'banana', 'orange'=>'orange', 'peach'=>'peach' ) );
+            echo "<script>var php2Js = $php</script>"; 
+
+            $data = array(
+               'name' => 'John',
+               'age' => 30,
+               'city' => 'New York'
+            );
+         
+            $json = json_encode( $data );
+            echo "<script>var data = $json;</script>";  
+         ?>
+            
           <!-- <?php 
             if( isset( $_POST ) ) {
                $dataFrom = file_get_contents( "php://input" );
@@ -428,6 +442,10 @@
                `;
             }
          } );
+
+         // let 
+         //    php2Js = JSON.parse( "<?php echo json_encode( $php ); ?>" )
+         // ;
 
       </script>
    </body>
